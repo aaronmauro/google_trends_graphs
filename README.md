@@ -1,4 +1,4 @@
-
+# Graphing Google Trends Data
 
 ```python
 import pandas as pd
@@ -7,7 +7,7 @@ from pandas.plotting import register_matplotlib_converters
 register_matplotlib_converters()
 ```
 
-## Python Google Trends Data
+## Python
 
 
 ```python
@@ -82,10 +82,6 @@ plt.plot(python)
 
 
 
-    [<matplotlib.lines.Line2D at 0x7f3ffcb55438>]
-
-
-
 
 ![png](output_4_1.png)
 
@@ -96,11 +92,6 @@ y_mean = python.rolling('365D').mean()
 
 plt.plot(y_mean)
 ```
-
-
-
-
-    [<matplotlib.lines.Line2D at 0x7f4001d39048>]
 
 
 
@@ -134,16 +125,16 @@ fig.savefig("python.png")
 ![png](output_6_0.png)
 
 
-## Cybersecurity Google Trends Data
+## Cybersecurity
 
 
 ```python
-python = pd.read_csv("cybersecurity_trends.csv", skiprows=2, parse_dates=['Month'], index_col=['Month'])
+cyber = pd.read_csv("cybersecurity_trends.csv", skiprows=2, parse_dates=['Month'], index_col=['Month'])
 ```
 
 
 ```python
-python.head()
+cyber.head()
 ```
 
 
@@ -203,13 +194,11 @@ python.head()
 
 
 ```python
-plt.plot(python)
+plt.plot(cyber)
 ```
 
 
 
-
-    [<matplotlib.lines.Line2D at 0x7f3ffcba1c88>]
 
 
 
@@ -219,15 +208,10 @@ plt.plot(python)
 
 
 ```python
-y_mean = python.rolling('365D').mean()
+y_mean = cyber.rolling('365D').mean()
 
 plt.plot(y_mean)
 ```
-
-
-
-
-    [<matplotlib.lines.Line2D at 0x7f3ffb559898>]
 
 
 
@@ -237,7 +221,7 @@ plt.plot(y_mean)
 
 
 ```python
-y_std = python.rolling('365D').std()
+y_std = cyber.rolling('365D').std()
 
 fig = plt.figure(figsize=(8,6), dpi=300)
 
@@ -261,16 +245,16 @@ fig.savefig("cybersecurity.png")
 ![png](output_12_0.png)
 
 
-## Machine Learning Google Trends Data
+## Machine Learning 
 
 
 ```python
-python = pd.read_csv("machine_learning_trends.csv", skiprows=2, parse_dates=['Month'], index_col=['Month'])
+ml = pd.read_csv("machine_learning_trends.csv", skiprows=2, parse_dates=['Month'], index_col=['Month'])
 ```
 
 
 ```python
-python.head()
+ml.head()
 ```
 
 
@@ -330,14 +314,8 @@ python.head()
 
 
 ```python
-plt.plot(python)
+plt.plot(ml)
 ```
-
-
-
-
-    [<matplotlib.lines.Line2D at 0x7f3ffb49f320>]
-
 
 
 
@@ -346,17 +324,10 @@ plt.plot(python)
 
 
 ```python
-y_mean = python.rolling('365D').mean()
+y_mean = ml.rolling('365D').mean()
 
 plt.plot(y_mean)
 ```
-
-
-
-
-    [<matplotlib.lines.Line2D at 0x7f4001da5048>]
-
-
 
 
 ![png](output_17_1.png)
@@ -364,7 +335,7 @@ plt.plot(y_mean)
 
 
 ```python
-y_std = python.rolling('365D').std()
+y_std = ml.rolling('365D').std()
 
 fig = plt.figure(figsize=(8,6), dpi=300)
 
